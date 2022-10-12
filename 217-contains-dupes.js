@@ -5,13 +5,13 @@
 var containsDuplicate = function (nums) {
   let dupes = {};
   let isDupe = false;
-  nums.map((num, i) => {
-    if (dupes[num]) {
+  for (let i = 0; i < nums.length; i++) {
+    if (dupes[nums[i]]) {
       isDupe = true;
-      return isDupe;
+      break;
     } else {
-      dupes[num] = 1;
+      dupes[nums[i]] = true;
     }
-  });
+  }
   return isDupe;
 };
