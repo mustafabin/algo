@@ -4,13 +4,12 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  let instaLookup = {};
+  let hashMap = {};
   for (let i = 0; i < nums.length; i++) {
     let desiredNum = target - nums[i];
-    if (instaLookup[desiredNum] != undefined && i != instaLookup[desiredNum]) {
-      return [i, instaLookup[desiredNum]];
-    } else {
-      instaLookup[nums[i]] = i;
+    if (hashMap[desiredNum] !== undefined) {
+      return [hashMap[desiredNum], i];
     }
+    hashMap[nums[i]] = i;
   }
 };
