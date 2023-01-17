@@ -5,7 +5,13 @@
  */
 var topKFrequent = function (nums, k) {
     let setMap = {}
-    for(let num of nums){ setMap[num] = 1 + (setMap[num] || 0)}
+    let mostFrequent = new Array(k)
+    console.log( typeof nums)
+    for(let index in nums){ 
+
+        setMap[nums[index]] = 1 + (setMap[nums[index]] || 0)
+
+    }
     return Object.entries(setMap).sort((a,b)=>b[1] - a[1]).slice(0,k).map((item)=>item[0]);
 };
 
